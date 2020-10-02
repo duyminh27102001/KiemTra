@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using lession1.pages;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -15,7 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Food3
+namespace lession1
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -66,7 +67,7 @@ namespace Food3
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(Pages.GiaoDien), e.Arguments);
+                    rootFrame.Navigate(typeof(Assignment4_home), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();

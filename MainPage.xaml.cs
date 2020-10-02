@@ -1,16 +1,11 @@
-﻿using Food3.Models;
-using Food3.Pages;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using lession1.model;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -21,71 +16,44 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace Food3
+namespace lession1
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public static List<Product> FavoriteProduct;
-       // public static List<Cart> listCart;
-        public static Frame contentFrame;
-        private readonly string stringUrl = String.Format("https://foodgroup.herokuapp.com/api/menu");
         public MainPage()
         {
             this.InitializeComponent();
-            GetMenu();
-            FavoriteProduct = new List<Product>();
         }
-        public async void GetMenu()
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            HttpClient httpClient = new HttpClient();// shippner
-            var response = await httpClient.GetAsync(stringUrl);
-            if (response.StatusCode == HttpStatusCode.OK)
+            
+            Letter letter = new Letter(email.Text, title.Text, content.Text);
+            LV.Items.Add(letter);
+
+            email.Text = " ";
+            title.Text = " ";
+            content.Text = " ";
+        }
+
+        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            email.Text = "huan dep rai";
+           /* for (int i = 0; i < LV.SelectedItems.Count(); i++)
             {
-                var stringContent = await response.Content.ReadAsStringAsync();
-                Menu menu = JsonConvert.DeserializeObject<Menu>(stringContent);
-                MN.ItemsSource = menu.data;
-            }
+                LV.Items.Remove(LV.SelectedItems[i]);
+               
+            }*/
+            Console.WriteLine("chay vao day "+LV.SelectedItems);
+            content.Text = " "+LV.SelectedItems[0];
         }
-
-        
-        private void ListViewItem_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MenuItem menuItem = MN.SelectedItem as MenuItem;
-            MainFrame.Navigate(typeof(Category), menuItem);
-        }
-
-        private void ScrollViewer_Loaded(object sender, RoutedEventArgs e)
-        {
-            contentFrame = MainFrame;
-            MainFrame.Navigate(typeof(Home));
-        }
-
-        private void btnFavorite_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(LayoutFavorite),FavoriteProduct);// chỗ này nè
-        }
-
-       
-
-        private void FIhome_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(Home));
-        }
-
-        private void FIheart_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(LayoutFavorite));
-        }
-
-        //show layout listcart order
-        private void FIcart_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            MainFrame.Navigate(typeof(ShowCart));
-        }
-
-        
     }
 }

@@ -8,22 +8,22 @@
 //------------------------------------------------------------------------------
 
 
-namespace Food3
+namespace lession1
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.18362.1")]
-        private global::Food3.Food3_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::lession1.lession1_XamlTypeInfo.XamlMetaDataProvider __appProvider;
 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.18362.1")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private global::Food3.Food3_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::lession1.lession1_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::Food3.Food3_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::lession1.lession1_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -61,7 +61,7 @@ namespace Food3
     }
 }
 
-namespace Food3.Food3_XamlTypeInfo
+namespace lession1.lession1_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -70,15 +70,15 @@ namespace Food3.Food3_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::Food3.Food3_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::lession1.lession1_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::Food3.Food3_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::lession1.lession1_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::Food3.Food3_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::lession1.lession1_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }
